@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.spendit.spenditscanner" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SpendItScanner</name>
+    <description>
+        Application for users of SpendIt.com.  Consumers can show proof of purchase for special offers, redeem coupons, redeem rewards, and more.  Merchants may scan codes to verify members and purchaes.
+    </description>
+    <author email="logik@darkdance.org" href="http://www.spendit.com">
+	Kim McCann for McCann Consulting
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SpendIt</title>
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/spendit.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/SpenditTheme_v1.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="jquery-qrcode/jquery.qrcode.min.js"></script>
+		<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+
+	<body onload="">
+
+		<!----------------------------------------------------------------------------------
+		NEWS SECTION
+		----------------------------------------------------------------------------------->
+		<!-- begin home page -------------------------------------------------------------->
+		<div data-role="page" id="homePage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-btn-active ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>SpendIt News</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>				
+					<li>
+						<a href="#merchantPage">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<h3>News From SpendIt.com</h3>
+				<div id="news"></div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end home page ---------------------------------------------------------------->
+
+		<!----------------------------------------------------------------------------------
+		SETTINGS SECTION
+		----------------------------------------------------------------------------------->
+		<!-- begin settings page ---------------------------------------------------------->
+		<div data-role="page" id="settingsPage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>SpendIt Settings</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-btn-active ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<h3>SpendIt Account</h3>
+				<p>
+					1 This appears to be the first time you are using this app.
+				</p>
+				<p>
+					Please enter your SpendIt account information:
+				</p>
+				<div id="loginError" class="error">
+					Invalid Login - please try again
+				</div>
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="email">Email Address:</label>
+					<input type="text"
+					name="email" id="email" placeholder="Email" value="" />
+				</div>
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="password">Password:</label>
+					<input type="password"
+					name="password" id="password" placeholder="Password" value="" />
+				</div>
+				<button name="saveButton" id="saveButton">
+					Save Settings
+				</button>
+				<p>
+					If you don't have a SpendIt account, don't worry, accounts are
+					free. You can sign up online at http://www.spendit.com/ and come
+					back here when you are ready to continue.
+				</p>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end settings page ------------------------------------------------------------>
+
+		<!----------------------------------------------------------------------------------
+		DEALS SECTION
+		----------------------------------------------------------------------------------->
+		<!-- begin deals page ------------------------------------------------------------->
+		<div data-role="page" id="dealsPage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h3>Your Deals</h3>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage" class="ui-btn-active">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<h3 class="pageHeadingText">Your Deals</h3>
+				<div id="scoreCodes"></div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end deals page --------------------------------------------------------------->
+
+		<!-- begin deals detail page ------------------------------------------------------>
+		<div data-role="page" id="dealsDetailPage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h3>Redeem Deal</h3>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage" class="ui-btn-active">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<button id="showQRCode">
+					Display QR Code
+				</button>
+				<h3>ScoreCode Detail</h3>
+				<div id="scoreCodeDetail"></div>
+
+			</div>
+			<div data-role="footer" class="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end deals detail page -------------------------------------------------------->
+
+		<!-- begin QR Code page ----------------------------------------------------------->
+		<div data-role="page" id="showQRCodePage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>Deal Code</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage" class="ui-btn-active">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<div class="detail_heading"></div>
+				<div class="detail_company"></div>
+				<div><strong>Display This QRCode To Merchant</strong></div>
+				<div id="qrcode"></div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end QR Code page ------------------------------------------------------------->
+
+		<!----------------------------------------------------------------------------------
+		REWARDS SECTION
+		----------------------------------------------------------------------------------->
+		<!-- begin scanRewardsPage page --------------------------------------------------->
+		<div data-role="page" id="scanRewardsPage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>SpendIt Rewards</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage" class="ui-btn-active">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<h1>Scan Code</h1>
+				<button id="scanRewardButton">Scan Reward QR Code</button>
+				<div id="rewardDetails"></div>	
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- begin scanRewardsPage page --------------------------------------------------->
+
+		<!----------------------------------------------------------------------------------
+		MERCHANT SECTION
+		----------------------------------------------------------------------------------->
+		<!-- begin merchant page ---------------------------------------------------------->
+		<div data-role="page" id="merchantPage">
+			<div class="iosStatusBar">
+			</div>
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>Your Offers</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>
+					<li>
+						<a href="#merchantPage" class="ui-btn-active">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<h3 class="pageHeadingText">Your Offers</h3>
+			<div data-role="content">
+				<div id="merchantCodes"></div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end merchant page ------------------------------------------------------------>
+
+		<!-- begin merchant detail page --------------------------------------------------->
+		<div data-role="page" id="merchantDetailPage">
+			<div class="iosStatusBar">
+			</div>			
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>Offer Detail</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage" class="ui-btn-active">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<!--
+					<a href="#scannerPage" data-role="button">Scan For This Deal</a>
+				-->
+				<button id="merchantScanButton">Scan For This Deal</button>
+				<div id="merchantCodeDetail"></div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end merchant detail page ----------------------------------------------------->
+
+		<!-- begin merchant scanner page -------------------------------------------------->
+		<div data-role="page" id="scannerPage">
+<div class="iosStatusBar">
+			</div>			
+			<div data-role="header" class="headerNav">
+				<a href="#homePage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+				<h1>Merchant Scan</h1>
+				<a href="#settingsPage"
+				class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left">Settings</a>
+			</div>
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#dealsPage">Deals</a>
+					</li>
+					<li>
+						<a href="#scanRewardsPage">Rewards</a>
+					</li>					
+					<li>
+						<a href="#merchantPage" class="ui-btn-active">Merchant</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="content">
+				<div id="scannerBody">
+					<h3>Scan Code</h3>
+				<!--
+					<button id="merchantScanButton">
+						Scan Now
+					</button>
+				-->
+					<button id="scanButton">
+						Scan Now
+					</button>					
+				</div>
+			</div>
+			<div data-role="footer" class="footer">
+				<h3>Spend<span style="color:  #F0B311">It</span>.com</h3>
+			</div>
+		</div>
+		<!-- end merchant scanner page ---------------------------------------------------->
+
+	</body>
+</html>

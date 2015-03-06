@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+
+.scoreCodeSummary {
+	border : 1px solid #afafaf;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+.scoreCodeSummary .headline{ font-weight: bold; text-align: left; width: 75%; }
+.scoreCodeSummary .scorecode{ font-weight: normal; text-align: left;}
+.scoreCodeSummary .expires{ color: red; text-align: left;}
+
+.scoreCodes .headline{ font-weight: bold; text-align: left;}
+.scoreCodes .company{ font-weight: bold; text-align: left;}
+.scoreCodes .scorecode{ font-weight: normal; text-align: left;}
+.scoreCodes .headline{ text-align: left;}
+.scoreCodes .expires{ color: red; text-align: left;}
+
+#scoreCodes {text-align: left;}
+#merchantCodes {text-align: left;}
+
+.merchantCodeSummary {
+	border : 1px solid #afafaf;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	text-align: left;
+}
+.merchantCodeSummary .headline{ font-weight: bold;  text-align: left; width: 75%; }
+.merchantCodeSummary .company{ font-weight: bold;  text-align: left;}
+.merchantCodeSummary .scorecode{ font-weight: normal; text-align: left;}
+.merchantCodeSummary .headline{ text-align: left;}
+.merchantCodeSummary .expires{ color: red; text-align: left;}
+
+.summaryImg {
+	padding-right: 10px;
+	margin-bottom: 60px;
+}
+
+#scoreCodeDetail {
+	border : 1px solid #afafaf;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;	
+}
+#scoreCodeDetail .detail_heading { color: #0068B3; font-weight: bold; font-size: 20pt; }
+#scoreCodeDetail .detail_subheading{ font-size: 16pt; }
+#scoreCodeDetail .detail_company{ font-size: 14pt; }
+#scoreCodeDetail .detail_picture{}
+#scoreCodeDetail .detail_description{  font-size: 12pt; }
+#scoreCodeDetail .detail_dates { font-size: 12pt;  }
+#scoreCodeDetail .detail_keywords { font-size: 10pt; }
+#scoreCodeDetail .detail_limitation { font-size: 12pt; color: red; }
+#scoreCodeDetail .detail_price { font-size: 12pt; font-weight: bold; }
+#scoreCodeDetail .detail_barcode {}
+
+
+#merchantCodeDetail {
+	border : 1px solid #afafaf;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;	
+}
+#merchantCodeDetail .merchant_detail_scancount { color: #000000; font-weight: bold; font-size: 20pt; }
+#merchantCodeDetail .merchant_detail_heading { color: #0068B3; font-weight: bold; font-size: 20pt; }
+#merchantCodeDetail .detail_heading { color: #0068B3; font-weight: bold; font-size: 20pt; }
+#merchantCodeDetail .detail_subheading{ font-size: 16pt; }
+#merchantCodeDetail .detail_company{ font-size: 14pt; }
+#merchantCodeDetail .detail_picture{}
+#merchantCodeDetail .detail_description{  font-size: 12pt; }
+#merchantCodeDetail .detail_dates { font-size: 12pt;  }
+#merchantCodeDetail .detail_keywords { font-size: 10pt; }
+#merchantCodeDetail .detail_limitation { font-size: 12pt; color: red; }
+#merchantCodeDetail .detail_price { font-size: 12pt; font-weight: bold; }
+#merchantCodeDetail .detail_barcode {}
+
+#merchantScanButton {
+	background-color: #f0b311;
+}
+#scanRewardButton {
+ background-color: #f0b311;
+}
+
+#showQRCode {
+ background-color: #f0b311;
+}
+.error {
+    color:red;
+}
+
+#loginError {
+	color: red;
+	font-weight: bold;	
+}
+
+.newsStory { width: 93%; padding: 10px; margin: 10px solid #000000; border-radius: 20px; }
+.newsStory .image {min-width: 80%; height: auto; }
+.newsStory .date { }
+.newsStory .headline { font-weight: bold; font-size: 16pt; color: #0068B3; }
+.newsStory .body { }
+
+
+.footer{}
+.footer h4 {margin-bottom: 5px; font-size: 15px }
+.footer h4 {margin-top: 5px; font-size: 10px}
+
+.pageHeadingText {
+	color:#005599; margin-left: 20px;
+	margin-bottom: 0px;	
+}
+
+.headerNav {  border: none;	}
+.iosStatusBar {
+display: none;
+
+}
